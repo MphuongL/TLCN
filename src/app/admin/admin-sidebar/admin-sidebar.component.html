@@ -14,14 +14,28 @@
 
   <div class="sidebar-full-width-container" id="sidebar-header-container" aria-hidden="true">
     <div class="sidebar-section-wrapper">
-      <div class="sidebar-fixed-element-wrapper">
-        <img id="admin-sidebar-logo" src="assets/images/dspace-logo-mini.svg" [alt]="('menu.header.image.logo') | translate" aria-hidden="true">
+      <div class="sidebar-fixed-element-wrapper" 
+          style="background-color: rgb(255, 255, 255); padding: 15px; ">
+        <img 
+          id="admin-sidebar-logo" 
+          src="https://cdn.haitrieu.com/wp-content/uploads/2021/09/Logo-DH-Su-Pham-Ky-Thuat-TP-Ho-Chi-Minh-HCMUTE.png" 
+          [alt]="('menu.header.image.logo') | translate" 
+          aria-hidden="true"
+          style="width: 40px; height: auto;"
+        >
       </div>
+
       <div class="sidebar-collapsible-element-outer-wrapper">
-        <div class="sidebar-collapsible-element-inner-wrapper sidebar-item">
-          <h4 class="my-1">{{ 'menu.header.admin' | translate }}</h4>
+        <div class="sidebar-collapsible-element-inner-wrapper sidebar-item" 
+            style="background-color: rgb(19, 49, 89); padding: 20px 8px; text-align: center;">
+          <h4 class="my-1" 
+              style="color: rgb(255, 255, 255); margin: 0; font-size: 20px; font-weight: bold; padding-top: 10px;">
+            {{ 'menu.header.admin' | translate }}
+          </h4>
         </div>
       </div>
+
+
     </div>
   </div>
 

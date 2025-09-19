@@ -413,7 +413,7 @@
 
   "admin.access-control.groups.form.groupName": "Group name",
 
-  "admin.access-control.groups.form.groupCommunity": "Community or Collection",
+  "admin.access-control.groups.form.groupCommunity": "Faculty or Collection",
 
   "admin.access-control.groups.form.groupDescription": "Description",
 
@@ -909,7 +909,7 @@
 
   "collection.create.notifications.success": "Successfully created the Collection",
 
-  "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  "collection.create.sub-head": "Create a Collection for Faculty {{ parent }}",
 
   "collection.curate.header": "Curate Collection: {{collection}}",
 
@@ -1177,11 +1177,11 @@
 
   "collection.source.update.notifications.error.title": "Server Error",
 
-  "communityList.breadcrumbs": "Community List",
+  "communityList.breadcrumbs": "Faculty List",
 
-  "communityList.tabTitle": "Community List",
+  "communityList.tabTitle": "Faculty List",
 
-  "communityList.title": "List of Communities",
+  "communityList.title": "List of Faculties",
 
   "communityList.showMore": "Show More",
 
@@ -1189,7 +1189,7 @@
 
   "communityList.collapse": "Collapse {{ name }}",
 
-  "community.browse.logo": "Browse for a community logo",
+  "community.browse.logo": "Browse for a Faculty logo",
 
   "community.create.breadcrumbs": "Create Community",
 
@@ -1197,7 +1197,7 @@
 
   "community.create.notifications.success": "Successfully created the Community",
 
-  "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  "community.create.sub-head": "Create a Sub-Faculty for Faculty {{ parent }}",
 
   "community.curate.header": "Curate Community: {{community}}",
 
@@ -1209,11 +1209,11 @@
 
   "community.delete.head": "Delete Community",
 
-  "community.delete.notification.fail": "Community could not be deleted",
+  "community.delete.notification.fail": "Faculty could not be deleted",
 
   "community.delete.notification.success": "Successfully deleted community",
 
-  "community.delete.text": "Are you sure you want to delete community \"{{ dso }}\"",
+  "community.delete.text": "Are you sure you want to delete Faculty \"{{ dso }}\"",
 
   "community.edit.delete": "Delete this community",
 
@@ -1225,11 +1225,11 @@
 
   "community.edit.logo.delete-undo.title": "Undo delete",
 
-  "community.edit.logo.label": "Community logo",
+  "community.edit.logo.label": "Faculty logo",
 
-  "community.edit.logo.notifications.add.error": "Uploading community logo failed. Please verify the content before retrying.",
+  "community.edit.logo.notifications.add.error": "Uploading Faculty logo failed. Please verify the content before retrying.",
 
-  "community.edit.logo.notifications.add.success": "Upload community logo successful.",
+  "community.edit.logo.notifications.add.success": "Upload Faculty logo successful.",
 
   "community.edit.logo.notifications.delete.success.title": "Logo deleted",
 
@@ -1237,7 +1237,7 @@
 
   "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
 
-  "community.edit.logo.upload": "Drop a community logo to upload",
+  "community.edit.logo.upload": "Drop a Faculty logo to upload",
 
   "community.edit.notifications.success": "Successfully edited the Community",
 
@@ -1249,27 +1249,27 @@
 
   "community.edit.tabs.curate.head": "Curate",
 
-  "community.edit.tabs.curate.title": "Community Edit - Curate",
+  "community.edit.tabs.curate.title": "Faculty Edit - Curate",
 
   "community.edit.tabs.access-control.head": "Access Control",
 
-  "community.edit.tabs.access-control.title": "Community Edit - Access Control",
+  "community.edit.tabs.access-control.title": "Faculty Edit - Access Control",
 
   "community.edit.tabs.metadata.head": "Edit Metadata",
 
-  "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  "community.edit.tabs.metadata.title": "Faculty Edit - Metadata",
 
   "community.edit.tabs.roles.head": "Assign Roles",
 
-  "community.edit.tabs.roles.title": "Community Edit - Roles",
+  "community.edit.tabs.roles.title": "Faculty Edit - Roles",
 
   "community.edit.tabs.authorizations.head": "Authorizations",
 
-  "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  "community.edit.tabs.authorizations.title": "Faculty Edit - Authorizations",
 
-  "community.listelement.badge": "Community",
+  "community.listelement.badge": "Faculty",
 
-  "community.logo": "Community logo",
+  "community.logo": "Faculty logo",
 
   "comcol-role.edit.no-group": "None",
 
@@ -1287,7 +1287,7 @@
 
   "comcol-role.edit.collection-admin.name": "Administrators",
 
-  "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  "comcol-role.edit.community-admin.description": "Faculty administrators can create sub-Facultiesor collections, and manage or assign management for those sub-Facultiesor collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
 
   "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
 
@@ -1327,7 +1327,7 @@
 
   "community.form.description": "Introductory text (HTML)",
 
-  "community.form.errors.title.required": "Please enter a community name",
+  "community.form.errors.title.required": "Please enter a Faculty name",
 
   "community.form.rights": "Copyright text (HTML)",
 
@@ -1347,7 +1347,7 @@
 
   "community.sub-collection-list.head": "Collections in this Community",
 
-  "community.sub-community-list.head": "Communities in this Community",
+  "community.sub-community-list.head": "Facultiesin this Community",
 
   "cookies.consent.accept-all": "Accept all",
 
@@ -1493,7 +1493,7 @@
 
   "dso-selector.create.community.or-divider": "or",
 
-  "dso-selector.create.community.sub-level": "Create a new community in",
+  "dso-selector.create.community.sub-level": "Create a new Faculty in",
 
   "dso-selector.create.community.top-level": "Create a new top-level community",
 
@@ -1529,7 +1529,7 @@
 
   "dso-selector.set-scope.community.or-divider": "or",
 
-  "dso-selector.set-scope.community.input-header": "Search for a community or collection",
+  "dso-selector.set-scope.community.input-header": "Search for a Faculty or collection",
 
   "dso-selector.claim.item.head": "Profile tips",
 
@@ -1909,9 +1909,9 @@
 
   "home.title": "Home",
 
-  "home.top-level-communities.head": "Communities in DSpace",
+  "home.top-level-communities.head": "Faculties",
 
-  "home.top-level-communities.help": "Select a community to browse its collections.",
+  "home.top-level-communities.help": "Select a Faculty to browse its collections.",
 
   "info.accessibility-settings.breadcrumbs": "Accessibility settings",
 
@@ -2975,7 +2975,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "All of DSpace",
+  "menu.section.browse_global": "All of HCMUTE",
 
   "menu.section.browse_global_by_author": "By Author",
 
@@ -2989,7 +2989,7 @@
 
   "menu.section.browse_global_by_title": "By Title",
 
-  "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  "menu.section.browse_global_communities_and_collections": "Faculty",
 
   "menu.section.control_panel": "Control Panel",
 
@@ -2999,7 +2999,7 @@
 
   "menu.section.edit_collection": "Collection",
 
-  "menu.section.edit_community": "Community",
+  "menu.section.edit_community": "Faculty",
 
   "menu.section.edit_item": "Item",
 
@@ -3007,7 +3007,7 @@
 
   "menu.section.export_collection": "Collection",
 
-  "menu.section.export_community": "Community",
+  "menu.section.export_community": "Faculty",
 
   "menu.section.export_item": "Item",
 
@@ -3057,7 +3057,7 @@
 
   "menu.section.new_collection": "Collection",
 
-  "menu.section.new_community": "Community",
+  "menu.section.new_community": "Faculty",
 
   "menu.section.new_item": "Item",
 
@@ -3079,7 +3079,7 @@
 
   "menu.section.registries_metadata": "Metadata",
 
-  "menu.section.statistics": "Statistics",
+  "menu.section.statistics": "",
 
   "menu.section.statistics_task": "Statistics Task",
 
@@ -3199,7 +3199,7 @@
 
   "nav.expandable-navbar-section-suffix": "(submenu)",
 
-  "nav.browse.header": "All of DSpace",
+  "nav.browse.header": "All of HCMUTE",
 
   "nav.community-browse.header": "By Community",
 
@@ -3223,7 +3223,7 @@
 
   "nav.search.button": "Submit search",
 
-  "nav.statistics.header": "Statistics",
+  "nav.statistics.header": "",
 
   "nav.stop-impersonating": "Stop impersonating EPerson",
 
@@ -3689,7 +3689,7 @@
 
   "resource-policies.add.for.item": "Add a new Item policy",
 
-  "resource-policies.add.for.community": "Add a new Community policy",
+  "resource-policies.add.for.community": "Add a new Faculty policy",
 
   "resource-policies.add.for.collection": "Add a new Collection policy",
 
@@ -4037,7 +4037,7 @@
 
   "search.form.search_dspace": "All repository",
 
-  "search.form.scope.all": "All of DSpace",
+  "search.form.scope.all": "All of HCMUTE",
 
   "search.results.head": "Search Results",
 
@@ -4115,11 +4115,11 @@
 
   "sorting.person.birthDate.DESC": "Birth Date Descending",
 
-  "statistics.title": "Statistics",
+  "statistics.title": "",
 
-  "statistics.header": "Statistics for {{ scope }}",
+  "statistics.header": "statistics for {{ scope }}",
 
-  "statistics.breadcrumbs": "Statistics",
+  "statistics.breadcrumbs": "",
 
   "statistics.page.no-data": "No data available",
 
@@ -4945,7 +4945,7 @@
 
   "subscriptions.table.not-available-message": "The subscribed item has been deleted, or you don't currently have the permission to view it",
 
-  "subscriptions.table.empty.message": "You do not have any subscriptions at this time. To subscribe to email updates for a Community or Collection, use the subscription button on the object's page.",
+  "subscriptions.table.empty.message": "You do not have any subscriptions at this time. To subscribe to email updates for a Faculty or Collection, use the subscription button on the object's page.",
 
   "thumbnail.default.alt": "Thumbnail Image",
 

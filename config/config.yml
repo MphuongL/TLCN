@@ -1,5 +1,6 @@
+# config/config.yml
 rest:
-  ssl: true
-  host: demo.dspace.org
-  port: 443
+  ssl: false
+  host: localhost   # nếu backend chạy ngoài Docker và expose port ra host
+  port: 8080
   nameSpace: /server
