@@ -56,11 +56,7 @@
   <div class="bottom-footer p-1 d-flex justify-content-center align-items-center text-white">
     <div class="content-container">
       <p class="m-0">
-        <a class="text-white"
-           href="http://www.dspace.org/" role="link" tabindex="0">{{ 'footer.link.dspace' | translate}}</a>
-        {{ 'footer.copyright' | translate:{year: dateObj | date:'y'} }}
-        <a class="text-white"
-           href="https://www.lyrasis.org/" role="link" tabindex="0">{{ 'footer.link.lyrasis' | translate}}</a>
+        {{ 'footer.dspace' | translate}}
       </p>
       <ul class="footer-info list-unstyled d-flex justify-content-center mb-0">
         <li *ngIf="showCookieSettings">

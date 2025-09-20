@@ -106,8 +106,36 @@ export class MenuResolver implements Resolve<boolean> {
           text: `menu.section.browse_global_communities_and_collections`,
           link: `/community-list`
         } as LinkMenuItemModel
+      },
+      {
+        id: 'statistics',
+        active: false,
+        visible: true,
+        model: {
+          type: MenuItemType.LINK,
+          text: 'menu.section.statistics',
+          link: '/statistics'
+        } as LinkMenuItemModel,
+        icon: 'chart-bar',
+        index: 2,
+        shouldPersistOnRouteChange: true
+      },
+      {
+        id: 'statisticss',
+        active: false,
+        visible: true,
+        model: {
+          type: MenuItemType.LINK,
+          text: 'menu.section.help',
+          link: '/help'
+        } as LinkMenuItemModel,
+        icon: 'chart-bar',
+        index: 3,
+        shouldPersistOnRouteChange: true
       }
+
     ];
+    
     // Read the different Browse-By types from config and add them to the browse menu
     this.browseService.getBrowseDefinitions()
       .pipe(getFirstCompletedRemoteData<PaginatedList<BrowseDefinition>>())

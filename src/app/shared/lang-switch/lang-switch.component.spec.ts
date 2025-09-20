@@ -21,13 +21,14 @@ class CustomLoader implements TranslateLoader {
   getTranslation(lang: string): Observable<any> {
     return of({
       'footer': {
-        'copyright': 'copyright © 2002-{{ year }}',
-        'link.dspace': 'DSpace software',
-        'link.lyrasis': 'LYRASIS'
+        'copyright': 'Copyright © 2002-{{ year }}',
+        'dspace': 'DSpace software',
+        'lyrasis': 'LYRASIS'
       }
     });
   }
 }
+
 
 /* eslint-enable @typescript-eslint/quotes */
 /* eslint-enable quote-props */

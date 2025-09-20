@@ -2,6 +2,7 @@ import { APP_BASE_HREF, CommonModule, DOCUMENT } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HelpComponent } from 'src/themes/dspace/app/help/help.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EffectsModule } from '@ngrx/effects';
@@ -116,6 +117,7 @@ const PROVIDERS = [
 
 const DECLARATIONS = [
   AppComponent,
+  HelpComponent
 ];
 
 const EXPORTS = [

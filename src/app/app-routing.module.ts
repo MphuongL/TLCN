@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, NoPreloading } from '@angular/router';
 import { AuthBlockingGuard } from './core/auth/auth-blocking.guard';
+import { HelpComponent } from 'src/themes/dspace/app/help/help.component';
 
 import { AuthenticatedGuard } from './core/auth/authenticated.guard';
 import {
@@ -246,6 +247,10 @@ import { ViewTrackerResolverService } from './statistics/angulartics/dspace/view
             loadChildren: () => import('./subscriptions-page/subscriptions-page-routing.module')
               .then((m) => m.SubscriptionsPageRoutingModule),
             canActivate: [AuthenticatedGuard]
+          },
+          {
+            path: 'help',
+            component: HelpComponent
           },
           { path: '**', pathMatch: 'full', component: ThemedPageNotFoundComponent },
         ]

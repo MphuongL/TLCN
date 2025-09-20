@@ -3218,7 +3218,7 @@
   "footer.link.accessibility": "Accessibility settings",
 
   // "footer.link.dspace": "DSpace software",
-  "footer.link.dspace": "Phần mềm thư viện số",
+  "footer.dspace": "Thư viện số HCMUTE",
 
   // "footer.link.lyrasis": "LYRASIS",
   "footer.link.lyrasis": "LYRASIS",
@@ -5859,6 +5859,8 @@
   // "menu.section.statistics": "Statistics",
   "menu.section.statistics": "Báo cáo thống kê",
 
+  "menu.section.help": "Trợ giúp",
+
   // "menu.section.statistics_task": "Statistics Task",
   "menu.section.statistics_task": "Nhiệm vụ báo cáo thống kê",
 
@@ -8204,7 +8206,7 @@
   "statistics.title": "Thống kê",
 
   // "statistics.header": "Statistics for {{ scope }}",
-  "statistics.header": "Thống kê theo {{ scope }}",
+  "statistics.header": "Thống kê theo HCMUTE",
 
   // "statistics.breadcrumbs": "Statistics",
   "statistics.breadcrumbs": "Thống kê",

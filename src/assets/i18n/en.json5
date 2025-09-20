@@ -1681,7 +1681,7 @@
 
   "footer.link.accessibility": "Accessibility settings",
 
-  "footer.link.dspace": "DSpace software",
+  "footer.dspace": "HCMUTE Digital library",
 
   "footer.link.lyrasis": "LYRASIS",
 
@@ -3079,7 +3079,9 @@
 
   "menu.section.registries_metadata": "Metadata",
 
-  "menu.section.statistics": "",
+  "menu.section.statistics": "Statistics",
+  
+  "menu.section.help": "Help",
 
   "menu.section.statistics_task": "Statistics Task",
 
@@ -4117,7 +4119,7 @@
 
   "statistics.title": "",
 
-  "statistics.header": "statistics for {{ scope }}",
+  "statistics.header": "Statistics for HCMUTE",
 
   "statistics.breadcrumbs": "",
 
