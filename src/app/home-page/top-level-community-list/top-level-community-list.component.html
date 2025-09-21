@@ -1,6 +1,6 @@
 <ng-container *ngVar="(communitiesRD$ | async) as communitiesRD">
   <div *ngIf="communitiesRD?.hasSucceeded ">
-    <h2>
+    <h2 class="text-center">
       {{'home.top-level-communities.head' | translate}}
     </h2>
   <p class="lead">{{'home.top-level-communities.help' | translate}}</p>

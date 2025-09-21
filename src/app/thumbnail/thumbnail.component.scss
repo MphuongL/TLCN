@@ -3,7 +3,13 @@
 }
 
 img {
-  max-width: 100%;
+    width: 150px !important;
+  height: 200px !important;
+}
+
+::ng-deep .thumbnail-content.img-fluid {
+  width: 150px !important;
+  height: 200px !important;
 }
 
 .outer {  // .outer/.inner generated ~ https://ratiobuddy.com/

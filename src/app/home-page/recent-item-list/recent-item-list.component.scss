@@ -1,0 +1,109 @@
+// Trong file component.scss
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background: white;
+  min-height: 220px; // Tăng chiều cao khung
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  // Style cho thumbnail - tăng kích thước
+  ::ng-deep .thumbnail-container {
+    height: 220px; // Tăng từ 300px xuống 220px để cân đối
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    
+    img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+  
+  // Style cho no thumbnail - SỬA LỖI ở đây
+  ::ng-deep .no-thumbnail {
+    height: 220px; // Sửa từ 00px thành 220px
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  // Tạo không gian cho title để hiển thị hết chữ
+  ::ng-deep .item-title {
+    font-size: 1rem;
+    line-height: 1.4;
+    min-height: 3.5em; // Tăng không gian cho title dài
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // Giới hạn 3 dòng
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+    font-weight: 500;
+  }
+  
+  // Metadata area - tăng không gian
+  ::ng-deep .item-metadata {
+    flex-grow: 1;
+    color: #6c757d;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  // Author info
+  ::ng-deep .item-author {
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .card {
+    min-height: 380px;
+    
+    ::ng-deep .thumbnail-container,
+    ::ng-deep .no-thumbnail {
+      height: 180px; // Giảm cho mobile
+    }
+    
+    ::ng-deep .item-title {
+      min-height: 2.8em;
+      -webkit-line-clamp: 2; // 2 dòng cho mobile
+    }
+  }
+}
+// Thêm vào cuối file component.scss
+.search-button {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+  }
+}

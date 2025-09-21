@@ -2,3 +2,8 @@ img {
   max-width: var(--ds-comcol-logo-max-width);
   max-height: var(--ds-comcol-logo-max-height);
 }
+
+:host ::ng-deep .img-fluid {
+  max-width: var(--ds-comcol-logo-max-width) !important;
+  height: auto !important;
+}

@@ -1,3 +1,46 @@
+// Layout badge, title, publisher, author đẹp, không bị đè
+.box-type-item {
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.box-type-badge {
+    margin-bottom: 0.25rem;
+}
+.item-list-title {
+    word-break: break-word;
+    white-space: normal;
+}
+.year-author-item {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+// Căn badge sát trên, cho phép xuống dòng khi dài
+.d-flex.align-items-start.mb-1 {
+    align-items: flex-start !important;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-left: 14px;
+    padding-right: 2%;
+    padding-bottom: 80px;
+}
+
+ds-themed-badges {
+    margin-bottom: 0.25rem;
+    margin-right: 0.75rem;
+    white-space: normal;
+    max-width: 100%;
+    margin-top: 0.5rem;
+}
+
+.flex-grow-1 {
+    min-width: 0;
+}
+
+.item-list-title {
+    word-break: break-word;
+    white-space: normal;
+}
 @import '../../../../../../../styles/variables';
 
 .item-list-supervision {
