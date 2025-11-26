@@ -1,5 +1,5 @@
 import { hasValue } from '../shared/empty.util';
-import { CommunityListService} from './community-list-service';
+import { CommunityListService } from './community-list-service';
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
@@ -13,13 +13,11 @@ import { FindListOptions } from '../core/data/find-list-options.model';
  *    (a node gets expanded or page-limited result become larger by triggering a show more node)
  */
 export class CommunityListDatasource implements DataSource<FlatNode> {
-
   private communityList$ = new BehaviorSubject<FlatNode[]>([]);
   public loading$ = new BehaviorSubject<boolean>(false);
   private subLoadCommunities: Subscription;
 
-  constructor(private communityListService: CommunityListService) {
-  }
+  constructor(private communityListService: CommunityListService) {}
 
   connect(collectionViewer: CollectionViewer): Observable<FlatNode[]> {
     return this.communityList$.asObservable();
@@ -30,16 +28,16 @@ export class CommunityListDatasource implements DataSource<FlatNode> {
     if (hasValue(this.subLoadCommunities)) {
       this.subLoadCommunities.unsubscribe();
     }
-    this.subLoadCommunities = this.communityListService.loadCommunities(findOptions, expandedNodes).pipe(
-      finalize(() => this.loading$.next(false)),
-    ).subscribe((flatNodes: FlatNode[]) => {
-      this.communityList$.next(flatNodes);
-    });
+    this.subLoadCommunities = this.communityListService
+      .loadCommunities(findOptions, expandedNodes)
+      .pipe(finalize(() => this.loading$.next(false)))
+      .subscribe((flatNodes: FlatNode[]) => {
+        this.communityList$.next(flatNodes);
+      });
   }
 
   disconnect(collectionViewer: CollectionViewer): void {
     this.communityList$.complete();
     this.loading$.complete();
   }
-
 }

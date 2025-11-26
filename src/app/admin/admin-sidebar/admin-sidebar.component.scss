@@ -1,5 +1,4 @@
 :host {
-
   /* SIDEBAR SIZE AND POSITION */
 
   /* Sidebar hierarchy:
@@ -20,8 +19,9 @@
 
   // Sidebar size and content position
   nav#admin-sidebar {
-
-    max-width: var(--ds-admin-sidebar-fixed-element-width); // Sidebar collapsed width
+    max-width: var(
+      --ds-admin-sidebar-fixed-element-width
+    ); // Sidebar collapsed width
 
     display: flex;
     flex-direction: column;
@@ -39,7 +39,6 @@
     }
 
     ::ng-deep {
-
       // This class must be applied to any nested wrapper containing a sidebar section
       .sidebar-full-width-container {
         width: 100%;
@@ -58,7 +57,6 @@
 
       // These classes handle the collapsing behavior
       .sidebar-section-wrapper {
-
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -80,35 +78,39 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-end; // make inner wrapper slide on the left when collapsing
-          max-width: calc(100% - var(--ds-admin-sidebar-fixed-element-width)); // fill available space
-          padding-left: var(--ds-dark-scrollbar-width); // leave room for scrollbar
+          max-width: calc(
+            100% - var(--ds-admin-sidebar-fixed-element-width)
+          ); // fill available space
+          // padding-left: var(--ds-dark-scrollbar-width); // leave room for scrollbar
           overflow-x: hidden; // hide inner wrapper when sidebar is collapsed
 
           // These elements have fixed width and slide on the left when the sidebar is collapsed
           // Their content should fill all available space
           & > .sidebar-collapsible-element-inner-wrapper {
-            min-width: calc(var(--ds-admin-sidebar-collapsible-element-width) - var(--ds-dark-scrollbar-width));
+            min-width: calc(
+              var(--ds-admin-sidebar-collapsible-element-width) -
+                var(--ds-dark-scrollbar-width)
+            );
             height: 100%;
             padding-right: var(--ds-admin-sidebar-item-padding);
           }
         }
       }
-
     }
 
     // Set here any style that depends on the sidebar status
-    &.collapsed, &.transitioning, &.expanded { }
-
+    &.collapsed,
+    &.transitioning,
+    &.expanded {
+    }
   }
 
   /* SIDEBAR STYLE */
 
   nav#admin-sidebar {
-
     background-color: var(--ds-admin-sidebar-bg);
 
     ::ng-deep {
-
       color: white;
 
       // Set here the style of the *-menu-item nested components
@@ -119,7 +121,8 @@
         color: var(--ds-admin-sidebar-link-color);
         text-decoration: none;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: var(--ds-admin-sidebar-link-hover-color);
         }
       }

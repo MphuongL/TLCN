@@ -1,30 +1,52 @@
-<ng-container *ngVar="(itemRD$ | async) as itemRD">
-  <div class="mt-4" [ngClass]="placeholderFontClass" *ngIf="itemRD?.hasSucceeded && itemRD?.payload?.page.length > 0" @fadeIn>
+<ng-container *ngVar="itemRD$ | async as itemRD">
+  <div
+    class="mt-4"
+    [ngClass]="placeholderFontClass"
+    *ngIf="itemRD?.hasSucceeded && itemRD?.payload?.page.length > 0"
+    @fadeIn
+  >
     <div class="d-flex flex-row border-bottom mb-4 pb-4"></div>
-    <h2 class="text-center">{{'home.recent-submissions.head' | translate}}</h2>
-    
+    <h2 class="text-center">
+      {{ "home.recent-submissions.head" | translate }}
+    </h2>
+
     <!-- Grid layout ngang -->
-    <div class="row g-4 mt-4">
-      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of itemRD?.payload?.page">
+    <div class="row g-4 mt-4 justify-content-center" style="row-gap: 30px">
+      <div
+        class="col-lg-4 col-md-6 col-sm-12"
+        *ngFor="let item of itemRD?.payload?.page"
+      >
         <div class="card h-100">
-          <ds-listable-object-component-loader 
-            [object]="item" 
-            [viewMode]="viewMode" 
-            class="card-body p-0">
+          <ds-listable-object-component-loader
+            [object]="item"
+            [viewMode]="viewMode"
+            class="card-body p-0"
+          >
           </ds-listable-object-component-loader>
         </div>
       </div>
     </div>
-    
+
     <!-- Button căn phải như trong hình -->
     <div class="text-right mt-4">
-      <button (click)="onLoadMore()" class="btn btn-outline-primary search-button px-4 py-2" role="link" tabindex="0">
-        {{'vocabulary-treeview.load-more' | translate }}
+      <button
+        (click)="onLoadMore()"
+        class="btn btn-outline-primary search-button px-4 py-2"
+        role="link"
+        tabindex="0"
+      >
+        {{ "vocabulary-treeview.load-more" | translate }}
       </button>
     </div>
   </div>
-  
-  <ds-error *ngIf="itemRD?.hasFailed" message="{{'error.recent-submissions' | translate}}"></ds-error>
-  <ds-loading *ngIf="!itemRD || itemRD.isLoading" message="{{'loading.recent-submissions' | translate}}">
+
+  <ds-error
+    *ngIf="itemRD?.hasFailed"
+    message="{{ 'error.recent-submissions' | translate }}"
+  ></ds-error>
+  <ds-loading
+    *ngIf="!itemRD || itemRD.isLoading"
+    message="{{ 'loading.recent-submissions' | translate }}"
+  >
   </ds-loading>
 </ng-container>
