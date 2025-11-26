@@ -1,0 +1,32 @@
+.pdf-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 150px; /* GIỮ NGUYÊN ĐỂ HAI NÚT BẰNG NHAU */
+}
+
+.pdf-actions .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  background-color: #5a6370;
+  color: #fff;
+  border: 1px solid #5a6370;
+  cursor: pointer;
+  transition: background 0.2s ease, border 0.2s ease;
+  width: 100%; /* QUAN TRỌNG: ép hai nút cùng chiều rộng */
+}
+
+.pdf-actions .btn:hover {
+  background-color: #4a5260;
+  border-color: #4a5260;
+}
+
+.pdf-actions .btn i {
+  margin-right: 6px;
+}
