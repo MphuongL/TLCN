@@ -1,77 +1,130 @@
-<nav class="navbar navbar-dark p-0 vh-100"
-     id="admin-sidebar"
-     [attr.aria-label]="'menu.header.nav.description' | translate"
-     [ngClass]="{'expanded': sidebarOpen, 'collapsed': sidebarClosed, 'transitioning': sidebarTransitioning}"
-     [@slideSidebar]="{
-      value: (!(sidebarExpanded | async) ? 'collapsed' : 'expanded'),
-      params: { collapsedWidth: (collapsedSidebarWidth$ | async), expandedWidth: (expandedSidebarWidth$ | async) }
-     }" (@slideSidebar.done)="finishSlide($event)" (@slideSidebar.start)="startSlide($event)"
-     *ngIf="menuVisible | async"
-     (mouseenter)="handleMouseEnter($event)"
-     (mouseleave)="handleMouseLeave($event)">
-
+<nav
+  class="navbar navbar-dark p-0 vh-100"
+  id="admin-sidebar"
+  [attr.aria-label]="'menu.header.nav.description' | translate"
+  [ngClass]="{
+    expanded: sidebarOpen,
+    collapsed: sidebarClosed,
+    transitioning: sidebarTransitioning
+  }"
+  [@slideSidebar]="{
+    value: !(sidebarExpanded | async) ? 'collapsed' : 'expanded',
+    params: {
+      collapsedWidth: (collapsedSidebarWidth$ | async),
+      expandedWidth: (expandedSidebarWidth$ | async)
+    }
+  }"
+  (@slideSidebar.done)="finishSlide($event)"
+  (@slideSidebar.start)="startSlide($event)"
+  *ngIf="menuVisible | async"
+  (mouseenter)="handleMouseEnter($event)"
+  (mouseleave)="handleMouseLeave($event)"
+>
   <!-- HEADER -->
 
-  <div class="sidebar-full-width-container" id="sidebar-header-container" aria-hidden="true">
+  <div
+    class="sidebar-full-width-container"
+    id="sidebar-header-container"
+    aria-hidden="true"
+  >
     <div class="sidebar-section-wrapper">
-      <div class="sidebar-fixed-element-wrapper" 
-          style="background-color: rgb(255, 255, 255); padding: 15px; ">
-        <img 
-          id="admin-sidebar-logo" 
-          src="https://cdn.haitrieu.com/wp-content/uploads/2021/09/Logo-DH-Su-Pham-Ky-Thuat-TP-Ho-Chi-Minh-HCMUTE.png" 
-          [alt]="('menu.header.image.logo') | translate" 
+      <div
+        class="sidebar-fixed-element-wrapper"
+        style="background-color: rgb(255, 255, 255)"
+      >
+        <img
+          id="admin-sidebar-logo"
+          src="https://cdn.haitrieu.com/wp-content/uploads/2021/09/Logo-DH-Su-Pham-Ky-Thuat-TP-Ho-Chi-Minh-HCMUTE.png"
+          [alt]="'menu.header.image.logo' | translate"
           aria-hidden="true"
-          style="width: 40px; height: auto;"
-        >
+          style="width: 40px; height: auto; object-fit: contain"
+        />
       </div>
 
       <div class="sidebar-collapsible-element-outer-wrapper">
-        <div class="sidebar-collapsible-element-inner-wrapper sidebar-item" 
-            style="background-color: rgb(19, 49, 89); padding: 20px 8px; text-align: center;">
-          <h4 class="my-1" 
-              style="color: rgb(255, 255, 255); margin: 0; font-size: 20px; font-weight: bold; padding-top: 10px;">
-            {{ 'menu.header.admin' | translate }}
+        <div
+          class="sidebar-collapsible-element-inner-wrapper sidebar-item"
+          style="
+            background-color: rgb(19, 49, 89);
+            padding: 19px 8px;
+            text-align: center;
+          "
+        >
+          <h4
+            class="my-1"
+            style="
+              color: rgb(255, 255, 255);
+              margin: 0;
+              font-size: 20px;
+              font-weight: bold;
+              padding-top: 10px;
+            "
+          >
+            {{ "menu.header.admin" | translate }}
           </h4>
         </div>
       </div>
-
-
     </div>
   </div>
 
   <!-- ITEMS -->
 
-  <div class="sidebar-full-width-container" id="sidebar-top-level-items-container">
-    <div class="sidebar-full-width-container" id="sidebar-top-level-items" role="menubar"
-        [attr.aria-label]="'menu.header.admin.description' |translate">
-      <ng-container *ngFor="let section of (sections | async)">
+  <div
+    class="sidebar-full-width-container"
+    id="sidebar-top-level-items-container"
+  >
+    <div
+      class="sidebar-full-width-container"
+      id="sidebar-top-level-items"
+      role="menubar"
+      [attr.aria-label]="'menu.header.admin.description' | translate"
+    >
+      <ng-container *ngFor="let section of sections | async">
         <ng-container
-          *ngComponentOutlet="(sectionMap$ | async).get(section.id).component; injector: (sectionMap$ | async).get(section.id).injector;"></ng-container>
+          *ngComponentOutlet="
+            (sectionMap$ | async).get(section.id).component;
+            injector: (sectionMap$ | async).get(section.id).injector
+          "
+        ></ng-container>
       </ng-container>
     </div>
   </div>
 
   <!-- TOGGLER -->
 
-  <div class="sidebar-full-width-container" id="sidebar-collapse-toggle-container">
-    <a class="sidebar-section-wrapper sidebar-full-width-container"
-       id="sidebar-collapse-toggle"
-       href="javascript:void(0);"
-       (click)="toggle($event)"
-       (keyup.space)="toggle($event)"
+  <div
+    class="sidebar-full-width-container"
+    id="sidebar-collapse-toggle-container"
+  >
+    <a
+      class="sidebar-section-wrapper sidebar-full-width-container"
+      id="sidebar-collapse-toggle"
+      href="javascript:void(0);"
+      (click)="toggle($event)"
+      (keyup.space)="toggle($event)"
     >
       <div class="sidebar-fixed-element-wrapper">
-        <i *ngIf="(menuCollapsed | async)" class="fas fa-fw fa-angle-double-right"
-           [title]="'menu.section.icon.pin' | translate"></i>
-        <i *ngIf="!(menuCollapsed | async)" class="fas fa-fw fa-angle-double-left"
-           [title]="'menu.section.icon.unpin' | translate"></i>
+        <i
+          *ngIf="menuCollapsed | async"
+          class="fas fa-fw fa-angle-double-right"
+          [title]="'menu.section.icon.pin' | translate"
+        ></i>
+        <i
+          *ngIf="!(menuCollapsed | async)"
+          class="fas fa-fw fa-angle-double-left"
+          [title]="'menu.section.icon.unpin' | translate"
+        ></i>
       </div>
       <div class="sidebar-collapsible-element-outer-wrapper">
         <div class="sidebar-collapsible-element-inner-wrapper sidebar-item">
-          {{ ((menuCollapsed | async) ? 'menu.section.pin' : 'menu.section.unpin' ) | translate }}
+          {{
+            ((menuCollapsed | async)
+              ? "menu.section.pin"
+              : "menu.section.unpin"
+            ) | translate
+          }}
         </div>
       </div>
     </a>
   </div>
-
 </nav>

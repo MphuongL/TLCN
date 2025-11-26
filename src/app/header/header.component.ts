@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MenuService } from '../shared/menu/menu.service';
 import { MenuID } from '../shared/menu/menu-id.model';
-import { HostWindowService, WidthCategory } from '../shared/host-window.service';
+import {
+  HostWindowService,
+  WidthCategory,
+} from '../shared/host-window.service';
 
 /**
  * Represents the header with the logo and simple navigation
@@ -22,12 +25,12 @@ export class HeaderComponent implements OnInit {
 
   menuID = MenuID.PUBLIC;
   maxMobileWidth = WidthCategory.SM;
+  isSidebarVisible$: Observable<boolean>;
 
   constructor(
     protected menuService: MenuService,
-    protected windowService: HostWindowService,
-  ) {
-  }
+    protected windowService: HostWindowService
+  ) {}
 
   ngOnInit(): void {
     this.isMobile$ = this.windowService.isUpTo(this.maxMobileWidth);
