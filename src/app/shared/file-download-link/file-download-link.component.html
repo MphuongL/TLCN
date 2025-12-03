@@ -1,14 +1,11 @@
 <div class="pdf-actions">
-  <a href="javascript:void(0)" (click)="openPDFWithoutToolbar()" class="btn btn-preview">
+  <a href="javascript:void(0)" (click)="handlePreview()" class="btn btn-preview">
     Preview
   </a>
 
-  <a [routerLink]="(bitstreamPath$| async)?.routerLink"
-     class="btn btn-download"
-     [queryParams]="(bitstreamPath$| async)?.queryParams"
-     [target]="isBlank ? '_blank': '_self'"
-     role="link"
-     tabindex="0">
+  <a [routerLink]="(bitstreamPath$| async)?.routerLink" class="btn btn-download"
+    [queryParams]="(bitstreamPath$| async)?.queryParams" [target]="isBlank ? '_blank': '_self'" role="link"
+    tabindex="0">
 
     <span *ngIf="!(canDownload$ | async)" class="pr-1">
       <i class="fas fa-lock"></i>
