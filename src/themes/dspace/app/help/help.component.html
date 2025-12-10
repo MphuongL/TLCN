@@ -1,24 +1,24 @@
-<div style="font-family: Arial, sans-serif; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; padding: 20px;">
+<div
+  style="font-family: Arial, sans-serif; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; padding: 20px;">
   <h2 style="color: #004080; text-align: center; margin-bottom: 20px;">
-    Thư viện số Trường Đại học Sư phạm Kỹ thuật TP.HCM (HCMUTE)
+    {{ 'help.page.title' | translate }}
   </h2>
 
-  <p style="font-size: 18px; text-align: justify;">
-    Chào mừng bạn đến với <strong>Thư viện số HCMUTE</strong> – kho học liệu điện tử phong phú, 
-    nơi tập hợp hàng nghìn sách, giáo trình, bài báo khoa học và tài nguyên trực tuyến 
-    phục vụ học tập, giảng dạy và nghiên cứu.  
+  <p style="font-size: 18px; text-align: justify;" [innerHTML]="'help.page.welcome' | translate">
   </p>
 
   <p style="font-size: 18px; text-align: justify;">
-    Tại đây giúp bạn cách tìm kiếm, truy cập và 
-    khai thác hiệu quả nguồn tài liệu. Với giao diện thân thiện và tiện lợi, 
-    Thư viện số giúp bạn học tập và nghiên cứu mọi lúc, mọi nơi.
+    {{ 'help.page.description' | translate }}
   </p>
 
-  <h3 style="color: #004080; text-align: center; margin-bottom: 20px;">Thông tin liên lạc</h3>
+  <h3 style="color: #004080; text-align: center; margin-bottom: 20px;">{{ 'help.page.contact.title' | translate }}</h3>
   <p style="font-size: 18px; text-align: justify;">
-    <strong>Địa chỉ:</strong> Số 1 Võ Văn Ngân, Thủ Đức, TP.HCM<br>
-    <strong>Email:</strong> <a href="mailto:thuvienso@hcmute.edu.vn">thuvienso@hcmute.edu.vn</a><br>
-    <strong>Điện thoại:</strong>  (+84 - 028) 38968641 - (+84 -028) 38961333 - (+84 -028) 37221223
+    <strong>{{ 'help.page.contact.address.label' | translate }}:</strong> {{ 'help.page.contact.address.value' |
+    translate }}<br>
+    <strong>{{ 'help.page.contact.email.label' | translate }}:</strong> <a
+      [href]="'mailto:' + ('help.page.contact.email.value' | translate)">
+      {{ 'help.page.contact.email.value' | translate }}</a><br>
+    <strong>{{ 'help.page.contact.phone.label' | translate }}:</strong> {{ 'help.page.contact.phone.value' | translate
+    }}
   </p>
 </div>

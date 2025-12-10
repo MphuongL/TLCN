@@ -12294,4 +12294,34 @@
   // "file-download-link.request-copy": "Request a copy of ",
   // TODO New key - Add a translation
   'file-download-link.request-copy': 'Request a copy of ',
+
+  // "help.page.title": "HCMUTE Digital Library - Ho Chi Minh City University of Technology and Education",
+  'help.page.title': 'Thư viện số Trường Đại học Sư phạm Kỹ thuật TP.HCM (HCMUTE)',
+
+  // "help.page.welcome": "Welcome to <strong>HCMUTE Digital Library</strong> – a rich electronic learning resource repository, where thousands of books, textbooks, scientific articles and online resources are collected to serve learning, teaching and research.",
+  'help.page.welcome': 'Chào mừng bạn đến với <strong>Thư viện số HCMUTE</strong> – kho học liệu điện tử phong phú, nơi tập hợp hàng nghìn sách, giáo trình, bài báo khoa học và tài nguyên trực tuyến phục vụ học tập, giảng dạy và nghiên cứu.',
+
+  // "help.page.description": "Here we help you search, access and effectively exploit document resources. With a friendly and convenient interface, the Digital Library helps you study and research anytime, anywhere.",
+  'help.page.description': 'Tại đây giúp bạn cách tìm kiếm, truy cập và khai thác hiệu quả nguồn tài liệu. Với giao diện thân thiện và tiện lợi, Thư viện số giúp bạn học tập và nghiên cứu mọi lúc, mọi nơi.',
+
+  // "help.page.contact.title": "Contact Information",
+  'help.page.contact.title': 'Thông tin liên lạc',
+
+  // "help.page.contact.address.label": "Address",
+  'help.page.contact.address.label': 'Địa chỉ',
+
+  // "help.page.contact.address.value": "1 Vo Van Ngan Street, Thu Duc, Ho Chi Minh City",
+  'help.page.contact.address.value': 'Số 1 Võ Văn Ngân, Thủ Đức, TP.HCM',
+
+  // "help.page.contact.email.label": "Email",
+  'help.page.contact.email.label': 'Email',
+
+  // "help.page.contact.email.value": "thuvienso@hcmute.edu.vn",
+  'help.page.contact.email.value': 'thuvienso@hcmute.edu.vn',
+
+  // "help.page.contact.phone.label": "Phone",
+  'help.page.contact.phone.label': 'Điện thoại',
+
+  // "help.page.contact.phone.value": "(+84 - 028) 38968641 - (+84 -028) 38961333 - (+84 -028) 37221223",
+  'help.page.contact.phone.value': '(+84 - 028) 38968641 - (+84 -028) 38961333 - (+84 -028) 37221223',
 }
