@@ -33,7 +33,7 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
             data: {
               breadcrumbKey: 'community.create',
             },
-          }
+          },
         ],
         canActivate: [AuthenticatedGuard, CreateCommunityPageGuard],
         data: {
@@ -54,9 +54,9 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
         children: [
           {
             path: COMMUNITY_EDIT_PATH,
-            loadChildren: () => import('./edit-community-page/edit-community-page.module')
-              .then((m) => m.EditCommunityPageModule),
-            canActivate: [CommunityPageAdministratorGuard]
+            loadChildren: () =>
+              import('./edit-community-page/edit-community-page.module').then((m) => m.EditCommunityPageModule),
+            canActivate: [CommunityPageAdministratorGuard],
           },
           {
             path: 'delete',
@@ -72,25 +72,27 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
               menu: DSOEditMenuResolver,
               tracking: ViewTrackerResolverService,
             },
-          }
+          },
         ],
         data: {
           menu: {
-            public: [{
-              id: 'statistics_community_:id',
-              active: true,
-              visible: true,
-              index: 2,
-              model: {
-                type: MenuItemType.LINK,
-                text: 'menu.section.statistics',
-                link: 'statistics/communities/:id/',
-              } as LinkMenuItemModel,
-            }],
+            public: [
+              {
+                id: 'statistics_community_:id',
+                active: true,
+                visible: true,
+                index: 2,
+                model: {
+                  type: MenuItemType.LINK,
+                  text: 'menu.section.view_community_statistics',
+                  link: 'statistics/communities/:id/',
+                } as LinkMenuItemModel,
+              },
+            ],
           },
         },
       },
-    ])
+    ]),
   ],
   providers: [
     CommunityPageResolver,
@@ -100,8 +102,6 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
     CreateCommunityPageGuard,
     CommunityPageAdministratorGuard,
     ViewTrackerResolverService,
-  ]
+  ],
 })
-export class CommunityPageRoutingModule {
-
-}
+export class CommunityPageRoutingModule {}

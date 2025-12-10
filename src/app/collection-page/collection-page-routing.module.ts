@@ -12,11 +12,7 @@ import { CollectionBreadcrumbResolver } from '../core/breadcrumbs/collection-bre
 import { DSOBreadcrumbsService } from '../core/breadcrumbs/dso-breadcrumbs.service';
 import { LinkService } from '../core/cache/builders/link.service';
 import { I18nBreadcrumbResolver } from '../core/breadcrumbs/i18n-breadcrumb.resolver';
-import {
-  ITEMTEMPLATE_PATH,
-  COLLECTION_EDIT_PATH,
-  COLLECTION_CREATE_PATH
-} from './collection-page-routing-paths';
+import { ITEMTEMPLATE_PATH, COLLECTION_EDIT_PATH, COLLECTION_CREATE_PATH } from './collection-page-routing-paths';
 import { CollectionPageAdministratorGuard } from './collection-page-administrator.guard';
 import { LinkMenuItemModel } from '../shared/menu/menu-item/models/link.model';
 import { ThemedCollectionPageComponent } from './themed-collection-page.component';
@@ -61,9 +57,9 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
         children: [
           {
             path: COLLECTION_EDIT_PATH,
-            loadChildren: () => import('./edit-collection-page/edit-collection-page.module')
-              .then((m) => m.EditCollectionPageModule),
-            canActivate: [CollectionPageAdministratorGuard]
+            loadChildren: () =>
+              import('./edit-collection-page/edit-collection-page.module').then((m) => m.EditCollectionPageModule),
+            canActivate: [CollectionPageAdministratorGuard],
           },
           {
             path: 'delete',
@@ -77,9 +73,9 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
             canActivate: [AuthenticatedGuard],
             resolve: {
               item: ItemTemplatePageResolver,
-              breadcrumb: I18nBreadcrumbResolver
+              breadcrumb: I18nBreadcrumbResolver,
             },
-            data: { title: 'collection.edit.template.title', breadcrumbKey: 'collection.edit.template' }
+            data: { title: 'collection.edit.template.title', breadcrumbKey: 'collection.edit.template' },
           },
           {
             path: '',
@@ -89,25 +85,27 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
               menu: DSOEditMenuResolver,
               tracking: ViewTrackerResolverService,
             },
-          }
+          },
         ],
         data: {
           menu: {
-            public: [{
-              id: 'statistics_collection_:id',
-              active: true,
-              visible: true,
-              index: 2,
-              model: {
-                type: MenuItemType.LINK,
-                text: 'menu.section.statistics',
-                link: 'statistics/collections/:id/',
-              } as LinkMenuItemModel,
-            }],
+            public: [
+              {
+                id: 'statistics_collection_:id',
+                active: true,
+                visible: true,
+                index: 2,
+                model: {
+                  type: MenuItemType.LINK,
+                  text: 'menu.section.view_collection_statistics',
+                  link: 'statistics/collections/:id/',
+                } as LinkMenuItemModel,
+              },
+            ],
           },
         },
       },
-    ])
+    ]),
   ],
   providers: [
     CollectionPageResolver,
@@ -119,8 +117,6 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
     CollectionPageAdministratorGuard,
     CommunityBreadcrumbResolver,
     ViewTrackerResolverService,
-  ]
+  ],
 })
-export class CollectionPageRoutingModule {
-
-}
+export class CollectionPageRoutingModule {}

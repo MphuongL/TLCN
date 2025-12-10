@@ -5881,7 +5881,16 @@
   'menu.section.registries_metadata': 'Trường dữ liệu',
 
   // "menu.section.statistics": "Statistics",
-  'menu.section.statistics': 'Báo cáo thống kê',
+  'menu.section.statistics': 'Thống kê',
+
+  // 'menu.section.view_item_statistics': 'View Item Statistics',
+  'menu.section.view_item_statistics': 'Thống kê của tài liệu',
+
+  // 'menu.section.view_collection_statistics': 'View Collection Statistics',
+  'menu.section.view_collection_statistics': 'Thống kê của bộ sưu tập',
+
+  // 'menu.section.view_community_statistics': 'View Community Statistics',
+  'menu.section.view_community_statistics': 'Thống kê của khoa',
 
   'menu.section.help': 'Trợ giúp',
 
@@ -8230,7 +8239,7 @@
   'statistics.title': 'Thống kê',
 
   // "statistics.header": "Statistics for {{ scope }}",
-  'statistics.header': 'Thống kê theo HCMUTE',
+  'statistics.header': 'Thống kê cho {{ scope }}',
 
   // "statistics.breadcrumbs": "Statistics",
   'statistics.breadcrumbs': 'Thống kê',

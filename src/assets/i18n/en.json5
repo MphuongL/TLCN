@@ -3097,6 +3097,12 @@
 
   'menu.section.statistics': 'Statistics',
 
+  'menu.section.view_item_statistics': 'View Item Statistics',
+
+  'menu.section.view_collection_statistics': 'View Collection Statistics',
+
+  'menu.section.view_community_statistics': 'View Community Statistics',
+
   'menu.section.help': 'Help',
 
   'menu.section.statistics_task': 'Statistics Task',

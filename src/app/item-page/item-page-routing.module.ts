@@ -51,13 +51,12 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
           },
           {
             path: ITEM_EDIT_PATH,
-            loadChildren: () => import('./edit-item-page/edit-item-page.module')
-              .then((m) => m.EditItemPageModule),
+            loadChildren: () => import('./edit-item-page/edit-item-page.module').then((m) => m.EditItemPageModule),
           },
           {
             path: UPLOAD_BITSTREAM_PATH,
             component: UploadBitstreamComponent,
-            canActivate: [AuthenticatedGuard]
+            canActivate: [AuthenticatedGuard],
           },
           {
             path: REQUEST_COPY_MODULE_PATH,
@@ -66,22 +65,24 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
           {
             path: ORCID_PATH,
             component: OrcidPageComponent,
-            canActivate: [AuthenticatedGuard, OrcidPageGuard]
-          }
+            canActivate: [AuthenticatedGuard, OrcidPageGuard],
+          },
         ],
         data: {
           menu: {
-            public: [{
-              id: 'statistics_item_:id',
-              active: true,
-              visible: true,
-              index: 2,
-              model: {
-                type: MenuItemType.LINK,
-                text: 'menu.section.statistics',
-                link: 'statistics/items/:id/',
-              } as LinkMenuItemModel,
-            }],
+            public: [
+              {
+                id: 'statistics_item_:id',
+                active: true,
+                visible: true,
+                index: 2,
+                model: {
+                  type: MenuItemType.LINK,
+                  text: 'menu.section.view_item_statistics',
+                  link: 'statistics/items/:id/',
+                } as LinkMenuItemModel,
+              },
+            ],
           },
         },
       },
@@ -94,10 +95,10 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
             resolve: {
               dso: VersionResolver,
             },
-          }
+          },
         ],
-      }
-    ])
+      },
+    ]),
   ],
   providers: [
     ItemPageResolver,
@@ -108,9 +109,6 @@ import { ViewTrackerResolverService } from '../statistics/angulartics/dspace/vie
     VersionResolver,
     OrcidPageGuard,
     ViewTrackerResolverService,
-  ]
-
+  ],
 })
-export class ItemPageRoutingModule {
-
-}
+export class ItemPageRoutingModule {}
