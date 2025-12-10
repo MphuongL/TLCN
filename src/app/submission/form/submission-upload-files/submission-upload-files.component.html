@@ -1,8 +1,4 @@
-<ds-uploader *ngIf="uploadFilesOptions.url"
-             [dropMsg]="dropMsg"
-             [dropOverDocumentMsg]="dropOverDocumentMsg"
-             [enableDragOverDocument]="enableDragOverDocument"
-             [onBeforeUpload]="onBeforeUpload"
-             [uploadFilesOptions]="uploadFilesOptions"
-             (onCompleteItem)="onCompleteItem($event)"
-             (onUploadError)="onUploadError()"></ds-uploader>
+<ds-uploader *ngIf="uploadFilesOptions.url" [dropMsg]="dropMsg" [dropOverDocumentMsg]="dropOverDocumentMsg"
+  [enableDragOverDocument]="enableDragOverDocument" [acceptedFileTypes]="['application/pdf']"
+  [onBeforeUpload]="onBeforeUpload" [uploadFilesOptions]="uploadFilesOptions" (onCompleteItem)="onCompleteItem($event)"
+  (onUploadError)="onUploadError()"></ds-uploader>

@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostListener, Input, Output, ViewEncapsulation, } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 import { of as observableOf } from 'rxjs';
 import { FileUploader } from 'ng2-file-upload';
@@ -12,17 +21,17 @@ import { HttpXsrfTokenExtractor } from '@angular/common/http';
 import { XSRF_COOKIE, XSRF_REQUEST_HEADER, XSRF_RESPONSE_HEADER } from '../../../core/xsrf/xsrf.constants';
 import { CookieService } from '../../../core/services/cookie.service';
 import { DragService } from '../../../core/drag.service';
+import { NotificationsService } from '../../notifications/notifications.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ds-uploader',
   templateUrl: 'uploader.component.html',
   styleUrls: ['uploader.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default,
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
-
 export class UploaderComponent {
-
   /**
    * Header key to impersonate a user
    */
@@ -64,6 +73,11 @@ export class UploaderComponent {
   @Input() ariaLabel: string;
 
   /**
+   * The accepted file types
+   */
+  @Input() acceptedFileTypes: string[];
+
+  /**
    * The function to call when upload is completed
    */
   @Output() onCompleteItem: EventEmitter<any> = new EventEmitter<any>();
@@ -85,7 +99,6 @@ export class UploaderComponent {
 
   @HostListener('window:dragover', ['$event'])
   onDragOver(event: any) {
-
     if (this.enableDragOverDocument && this.dragService.isAllowedDragOverPage()) {
       // Show drop area on the page
       event.preventDefault();
@@ -100,9 +113,10 @@ export class UploaderComponent {
     private scrollToService: ScrollToService,
     private dragService: DragService,
     private tokenExtractor: HttpXsrfTokenExtractor,
-    private cookieService: CookieService
-  ) {
-  }
+    private cookieService: CookieService,
+    private notificationsService: NotificationsService,
+    private translate: TranslateService
+  ) {}
 
   /**
    * Method provided by Angular. Invoked after the constructor.
@@ -119,6 +133,7 @@ export class UploaderComponent {
       autoUpload: this.uploadFilesOptions.autoUpload,
       method: this.uploadFilesOptions.method,
       queueLimit: this.uploadFilesOptions.maxFileNumber,
+      allowedMimeType: this.acceptedFileTypes,
     });
 
     if (isUndefined(this.enableDragOverDocument)) {
@@ -133,23 +148,30 @@ export class UploaderComponent {
   }
 
   ngAfterViewInit() {
-    this.uploader.onAfterAddingAll = ((items) => {
+    this.uploader.onAfterAddingAll = (items) => {
       this.onFileSelected.emit(items);
-    });
+    };
     if (isUndefined(this.onBeforeUpload)) {
-      this.onBeforeUpload = () => {return;};
+      this.onBeforeUpload = () => {
+        return;
+      };
     }
+    this.uploader.onWhenAddingFileFailed = (item) => {
+      console.log('onWhenAddingFileFailed', item, this.acceptedFileTypes);
+      this.notificationsService.error(null, this.translate.get('submission.sections.upload.invalid-file-type'));
+    };
     this.uploader.onBeforeUploadItem = (item) => {
       if (item.url !== this.uploader.options.url) {
         item.url = this.uploader.options.url;
       }
       // Ensure the current XSRF token is included in every upload request (token may change between items uploaded)
       // Ensure the behalf header is set if impersonating
-      this.uploader.options.headers = [
-        { name: XSRF_REQUEST_HEADER, value: this.tokenExtractor.getToken() },
-      ];
+      this.uploader.options.headers = [{ name: XSRF_REQUEST_HEADER, value: this.tokenExtractor.getToken() }];
       if (hasValue(this.uploadFilesOptions.impersonatingID)) {
-        this.uploader.options.headers.push({ name: this.ON_BEHALF_HEADER, value: this.uploadFilesOptions.impersonatingID });
+        this.uploader.options.headers.push({
+          name: this.ON_BEHALF_HEADER,
+          value: this.uploadFilesOptions.impersonatingID,
+        });
       }
       this.onBeforeUpload();
       this.isOverDocumentDropZone = observableOf(false);
@@ -220,7 +242,7 @@ export class UploaderComponent {
   private checkConfig(fileUploadOptions: any) {
     const required = ['url', 'authToken', 'disableMultipart', 'itemAlias'];
     const missing = required.filter((prop) => {
-      return !((prop in fileUploadOptions) && fileUploadOptions[prop] !== '');
+      return !(prop in fileUploadOptions && fileUploadOptions[prop] !== '');
     });
     if (0 < missing.length) {
       throw new Error('UploadFiles: Argument is missing the following required properties: ' + missing.join(', '));
@@ -240,5 +262,4 @@ export class UploaderComponent {
     this.cookieService.remove(XSRF_COOKIE);
     this.cookieService.set(XSRF_COOKIE, token);
   }
-
 }
