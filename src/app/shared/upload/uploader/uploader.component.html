@@ -21,8 +21,8 @@
             (keyup.enter)="$event.stopImmediatePropagation(); fileInput.click()">
             <span role="button" [attr.aria-label]="ariaLabel | translate">{{'uploader.browse' | translate}}</span>
           </label>
-          <input #fileInput accept="application/pdf" id="inputFileUploader-{{uploaderId}}" class="d-none" type="file"
-            ng2FileSelect [uploader]="uploader" multiple tabindex="0" />
+          <input #fileInput id="inputFileUploader-{{uploaderId}}" class="d-none" type="file" ng2FileSelect
+            [uploader]="uploader" multiple tabindex="0" />
         </span>
       </div>
       <div *ngIf="(isOverBaseDropZone | async) || uploader?.queue?.length !== 0">

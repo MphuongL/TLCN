@@ -119,7 +119,6 @@ export class UploaderComponent {
       autoUpload: this.uploadFilesOptions.autoUpload,
       method: this.uploadFilesOptions.method,
       queueLimit: this.uploadFilesOptions.maxFileNumber,
-      allowedMimeType: ['application/pdf'],
     });
 
     if (isUndefined(this.enableDragOverDocument)) {
